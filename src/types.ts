@@ -1,4 +1,4 @@
-import { boolean } from "yup"
+import { string } from "yup"
 
 export interface FoodProps {
     id: number
@@ -6,22 +6,30 @@ export interface FoodProps {
     description: string
     price: number
     available: boolean
-    image: string   
+    image: string
 }
 
 export interface propsAndFoodProps {
     food: FoodProps
-    handleDelete: (id:number)=>Promise<void>
-    handleEditFood: (food:FoodProps)=>void
+    handleDelete: (id: number) => Promise<void>
+    handleEditFood: (food: FoodProps) => void
 }
 
 export interface HeaderProps {
-    openModal: ()=>void
+    openModal: () => void
 }
 
-export interface propsAndModalProps {
-    modalOpen: boolean
-    editModalOpen: boolean
-    toggleModal: ()=>void
-    toggleEditModal: ()=>void
+export interface ModalAddFoodProps {
+    isOpen: () => void
+    setIsOpen: () => void
+    editingFood: () => void
+}
+
+export interface ModalEditFoodProps extends ModalAddFoodProps {
+    handleUpdateFood: () => void
+}
+
+export interface InputProps {
+    name: string
+    icon: {}
 }
