@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { Form as Unform } from '@unform/web';
-import { ReactNode } from 'react';
+import React, { ElementRef, RefObject } from 'react';
+import { FormHandles } from '@unform/core';
 
 interface FormProps {
-  ref: any
+  ref?:any
 }
 
 export const Form = styled(Unform)<FormProps>`
