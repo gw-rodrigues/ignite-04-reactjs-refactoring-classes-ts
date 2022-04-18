@@ -1,4 +1,4 @@
-import { createRef, ElementType, ReactNode } from 'react';
+import { createRef } from 'react';
 import { FiCheckSquare } from 'react-icons/fi';
 
 import { Form } from './styles';
@@ -6,10 +6,11 @@ import Modal from '../Modal';
 import Input from '../Input';
 
 import { FoodProps, ModalAddFoodProps } from '../../types';
+import { FormHandles } from '@unform/core';
 
 export const ModalAddFood = function ({ isOpen, setIsOpen, handleAddFood }: ModalAddFoodProps) {
 
-  const formRef = createRef();
+  const formRef = createRef<HTMLFormElement>();
 
   const handleSubmit = async (data: FoodProps) => {
     handleAddFood(data);
