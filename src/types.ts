@@ -1,4 +1,4 @@
-import { string } from "yup"
+import { ReactNode } from "react"
 
 export interface FoodProps {
     id: number
@@ -19,14 +19,18 @@ export interface HeaderProps {
     openModal: () => void
 }
 
-export interface ModalAddFoodProps {
-    isOpen: () => void
+export interface ModalProps {
+    isOpen: boolean
     setIsOpen: () => void
-    editingFood: () => void
+    children:ReactNode;
+}
+
+export interface ModalAddFoodProps extends ModalProps {
+    handleUpdateFood: () => void
 }
 
 export interface ModalEditFoodProps extends ModalAddFoodProps {
-    handleUpdateFood: () => void
+    editingFood: () => void
 }
 
 export interface InputProps {
