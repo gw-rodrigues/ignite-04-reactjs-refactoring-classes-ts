@@ -6,7 +6,6 @@ import Modal from '../Modal';
 import Input from '../Input';
 
 import { FoodProps, ModalAddFoodProps } from '../../types';
-import { FormHandles } from '@unform/core';
 
 export const ModalAddFood = function ({ isOpen, setIsOpen, handleAddFood }: ModalAddFoodProps) {
 
