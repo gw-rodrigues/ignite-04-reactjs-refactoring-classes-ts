@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { Form as Unform } from '@unform/web';
-import React, { ElementRef, RefObject } from 'react';
-import { FormHandles } from '@unform/core';
 
 interface FormProps {
   ref?:any
