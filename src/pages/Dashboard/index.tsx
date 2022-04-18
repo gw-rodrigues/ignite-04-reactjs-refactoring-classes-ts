@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import Header from '../../components/Header';
+import { Header } from '../../components/Header';
 import api from '../../services/api';
 import { Food } from '../../components/Food';
 import ModalAddFood from '../../components/ModalAddFood';
@@ -19,7 +19,6 @@ export const Dashboard = function () {
     async function componentDidMount() {
       const response = await api.get('/foods');
       setFoods(response.data);
-      console.log(response.data)
     }
     componentDidMount()
   }, [])
@@ -53,8 +52,8 @@ export const Dashboard = function () {
       console.log(err);
     }
   }
-  
-  const handleDeleteFood = async (id:number) => {
+
+  const handleDeleteFood = async (id: number) => {
     await api.delete(`/foods/${id}`);
     const foodsFiltered = foods.filter(food => food.id !== id);
     setFoods(foodsFiltered);
@@ -68,7 +67,7 @@ export const Dashboard = function () {
     setEditModalOpen(!editModalOpen)
   }
 
-  const handleEditFood = (food:FoodProps) => {
+  const handleEditFood = (food: FoodProps) => {
     setEditingFood(food)
     setEditModalOpen(true)
   }
