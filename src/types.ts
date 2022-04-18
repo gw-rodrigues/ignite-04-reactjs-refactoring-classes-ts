@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ElementType, ReactNode } from "react"
 
 export interface FoodProps {
     id: number
@@ -22,18 +22,23 @@ export interface HeaderProps {
 export interface ModalProps {
     isOpen: boolean
     setIsOpen: () => void
-    children:ReactNode;
+    children?: ReactNode;
 }
 
 export interface ModalAddFoodProps extends ModalProps {
-    handleUpdateFood: () => void
+    handleAddFood: (food: FoodProps) => Promise<void>
 }
 
 export interface ModalEditFoodProps extends ModalAddFoodProps {
-    editingFood: () => void
+    handleUpdateFood: () => void
+}
+
+export interface IconProps {
+    size:number
 }
 
 export interface InputProps {
     name: string
-    icon: {}
+    placeholder:string
+    icon?: ElementType<IconProps>
 }
