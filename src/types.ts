@@ -29,8 +29,9 @@ export interface ModalAddFoodProps extends ModalProps {
     handleAddFood: (food: FoodProps) => Promise<void>
 }
 
-export interface ModalEditFoodProps extends ModalAddFoodProps {
-    handleUpdateFood: () => void
+export interface ModalEditFoodProps extends ModalProps {
+    editingFood: FoodProps | undefined
+    handleUpdateFood: (food: FoodProps) => Promise<void>
 }
 
 export interface IconProps {
