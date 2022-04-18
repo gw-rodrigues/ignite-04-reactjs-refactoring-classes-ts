@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { boolean } from 'yup';
 
 interface ContainerProps {
   available: boolean
