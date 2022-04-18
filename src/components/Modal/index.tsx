@@ -15,10 +15,6 @@ const Modal = function ({ isOpen, setIsOpen, children }: ModalProps) {
     componentDidUpdate()
   },[isOpen])
 
-  console.log('#############################')
-  console.log('Modal:',isOpen)
-  console.log('modalStatus:',modalStatus)
-
   return (
     <ReactModal
       shouldCloseOnOverlayClick={!false}
