@@ -8,12 +8,12 @@ const Modal = function ({ isOpen, setIsOpen, children }: ModalProps) {
   useEffect(() => {
     function componentDidUpdate() {
       if (modalStatus !== isOpen) {
-        console.log('last modalStatus:',modalStatus)
+        //console.log('last modalStatus:',modalStatus)
         setModalStatus(isOpen)
       }
     }
     componentDidUpdate()
-  },[isOpen])
+  },[isOpen, modalStatus])
 
   return (
     <ReactModal
