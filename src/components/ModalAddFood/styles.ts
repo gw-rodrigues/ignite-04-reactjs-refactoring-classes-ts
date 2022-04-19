@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Form as Unform } from '@unform/web';
 
 interface FormProps {
-  ref?:any
+    [string: string]: any;
 }
 
 export const Form = styled(Unform)<FormProps>`
